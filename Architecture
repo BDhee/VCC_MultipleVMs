@@ -1,0 +1,14 @@
++-------------------+           HTTP (REST API)            +-------------------+
+|                   |  curl http://10.0.2.15:5000          |                   |
+|   Client VM       |  --------------------------------->  |   Backend VM      |
+|                   |                                     |                   |
+| Ubuntu 22.04 LTS  |                                     | Ubuntu 22.04 LTS  |
+| Role: Client      |                                     | Role: Microservice|
+|                   |                                     |                   |
+| curl / browser    |                                     | Flask App         |
+|                   |                                     | app.py            |
++---------+---------+                                     +---------+---------+
+          |                                                           |
+          |                       NAT Network                         |
+          +-----------------------------------------------------------+
+                              (VirtualBox)
