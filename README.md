@@ -1,39 +1,18 @@
-# VCC_MultipleVMs
-This repository demonstrates deployment of a simple microservice application across multiple VirtualBox virtual machines using NAT networking.
+## Microservice Deployment Using Multiple Virtual Machines
 
-# Microservice Deployment Using Multiple Virtual Machines
+This project demonstrates a simple Flask-based microservice deployed on a backend
+virtual machine and accessed from a client virtual machine using Oracle VirtualBox.
 
-## Objective
-The objective of this project is to demonstrate the deployment of a simple microservice application across multiple virtual machines using Oracle VirtualBox.
+### Virtual Machines
+- Backend VM (Ubuntu 22.04): Hosts Flask REST API
+- Client VM (Ubuntu 22.04): Accesses backend using curl
 
-## Environment Setup
-- Host OS: Windows
-- Virtualization Tool: Oracle VirtualBox
-- Guest OS: Ubuntu 22.04 LTS
-- Networking Mode: NAT
-- Backend VM IP: 10.0.2.15
-- Client VM IP: 10.0.2.x
+### Network Configuration
+- NAT networking was used for both VMs.
 
-## Architecture Overview
-- Backend VM hosts a Python Flask microservice.
-- Client VM sends HTTP requests to the backend service.
-- Communication happens over NAT network using private IPs.
+### Microservice
+The backend VM runs a Flask application exposing a REST endpoint on port 5000.
+The client VM communicates with the backend using its private NAT IP.
 
-## Backend Service
-The backend service is a simple REST API implemented using Flask.
-
-### Endpoint
-
-### Sample Response
-```json
-{
-  "service": "backend",
-  "status": "running"
-}
-sudo apt update
-sudo apt install python3-pip -y
-pip3 install flask
-python3 app.py
-
-curl http://10.0.2.15:5000
-
+### Screenshots
+All implementation evidence is available in the `screenshots/` directory.
